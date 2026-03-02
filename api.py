@@ -49,23 +49,22 @@ def _call(model, messages, max_tokens=1024, temperature=0.8):
 
 # --- Gemini palm line image ---
 
-HIGHLIGHT_PROMPT = """Edit this palm photo to create a professional palmistry diagram. Draw clean, thin dark lines directly on the actual visible creases of the palm, like a classical palm reading chart.
+HIGHLIGHT_PROMPT = """Edit this palm photo. Overlay thin black lines on the actual visible creases of the palm. Draw exactly these 4 lines:
 
-Lines to trace (only if visible as real creases):
-- HEART LINE — the top horizontal crease running across the upper palm
-- HEAD LINE — the middle horizontal crease below the heart line
-- LIFE LINE — the curved crease arcing around the base of the thumb
-- FATE LINE — vertical crease running up the center of the palm
-- SUN LINE — short line below the ring finger, if visible
-- MERCURY LINE — line on the outer edge of the palm, if visible
+1. HEART LINE — runs horizontally across the TOP of the palm, just below the fingers, from the pinky side to the index finger side. Label it "HEART LINE".
 
-Style rules:
-- Draw thin, clean, dark lines (black or very dark brown) tracing the actual creases
-- Write the line name in small uppercase text ALONG each line (e.g. "HEART LINE", "HEAD LINE", "LIFE LINE")
-- Label the palm regions: VENUS (thumb base), MARS (center), MOON (lower outer edge), JUPITER (below index finger), SATURN (below middle finger), SUN (below ring finger), MERCURY (below pinky)
+2. HEAD LINE — runs horizontally across the MIDDLE of the palm, below the heart line, starting near the thumb/index gap and going across. Label it "HEAD LINE".
+
+3. LIFE LINE — curves from between the thumb and index finger DOWNWARD in an arc around the base of the thumb. Label it "LIFE LINE".
+
+4. FATE LINE — runs VERTICALLY up the center of the palm from the wrist toward the middle finger. Label it "FATE LINE".
+
+Rules:
+- All lines must be thin, clean BLACK lines
+- Trace the lines ON the actual visible creases in the photo
+- Add small black text labels with arrows pointing to each line
 - Keep the original palm photo fully visible underneath
-- Do NOT add any decorative elements, symbols, or borders
-- The result should look like a professional palmistry reference diagram"""
+- No other decorations, symbols, colors, or region labels"""
 
 
 def generate_palm_image(image_rgb):
