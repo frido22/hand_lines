@@ -1,0 +1,3 @@
+# Hand Lines
+
+Hand Lines is a web-based palm reading app that uses your webcam to capture photos of your left and right palms. MediaPipe detects your hand and isolates the palm region on a clean black background. The cropped palm is sent to Google's Gemini image model, which draws labeled palm lines — Heart, Head, Life, Fate — directly onto your photo like a professional palmistry diagram. A second vision model reads both palms and generates a personalized fortune, describing what each line reveals about your love life, intellect, vitality, and destiny. The app runs locally as a Gradio web interface powered by OpenRouter for API access.

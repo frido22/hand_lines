@@ -1,6 +1,6 @@
 opencv-python>=4.8
 mediapipe>=0.10
-scikit-image>=0.21
-gradio>=4.0
-openai>=1.0
+gradio>=4.0,<5.0
+huggingface-hub<1.0
+requests
 numpy
